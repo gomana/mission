@@ -55,7 +55,7 @@
         - 상품별 가격 조회
         - header의 Authorization로 토큰 필수
 
-## API 증적
+## API 화면
 - 로컬 실행
 ![api_front](https://user-images.githubusercontent.com/939827/129808365-96ef9338-b26d-4c23-9269-60afc7f50a4c.PNG)
 ![api_front2](https://user-images.githubusercontent.com/939827/129808816-80deb3d2-57a0-4da7-b6b0-71f22ff65ad8.PNG)
