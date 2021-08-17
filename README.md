@@ -9,9 +9,19 @@
         - 127.0.0.1 api-vegetable.gom.com   
         - 127.0.0.1 web-front.gom.com   
 ## 기술스택
-docker compose  
-codeigniter 3  
-mysql
+- docker compose  
+- codeigniter 3  
+- mysql
+- jwt
 
-## 도메인
-- 
+## API 구성
+- api-fruit.gom.com
+    - /token
+        - 과일 accessToken 생성
+        - jwt 방식
+        - json 형식으로 응답
+- api-vegetable.gom.com
+    - /token
+        - 채소 accessToken 생성
+        - jwt 방식
+        - response header에서 set-cookie로 설정
