@@ -5,9 +5,9 @@
     - proxy/nginx.conf에서 reverse proxy 설정
 - domain 구성
     - 로컬 컴퓨터에서 테스트시 hosts 파일 수정필요
-        127.0.0.1 api-fruit.gom.com   
-        127.0.0.1 api-vegetable.gom.com   
-        127.0.0.1 web-front.gom.com   
+        - 127.0.0.1 api-fruit.gom.com   
+        - 127.0.0.1 api-vegetable.gom.com   
+        - 127.0.0.1 web-front.gom.com   
 ## 기술스택
 docker compose  
 codeigniter 3  
