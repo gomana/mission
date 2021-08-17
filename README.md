@@ -54,7 +54,12 @@
     - /product?name=상품명
         - 상품별 가격 조회
         - header의 Authorization로 토큰 필수
-# 향후 과제
+
+## API 증적
+- 로컬 실행
+![api_front](https://user-images.githubusercontent.com/939827/129808365-96ef9338-b26d-4c23-9269-60afc7f50a4c.PNG)
+
+## 향후 과제
  - aws cache redis 적용하여 토큰 관리
  - aws docker 배포 방식 적용해 보기
  - docker compose에 다른 서비스들을 적용해 보기
