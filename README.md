@@ -15,7 +15,10 @@
     - 로컬 컴퓨터에서 테스트시 hosts 파일 수정필요
         - 127.0.0.1 api-fruit.gom.com   
         - 127.0.0.1 api-vegetable.gom.com   
-        - 127.0.0.1 web-front.gom.com   
+        - 127.0.0.1 web-front.gom.com  
+- db는 mysql로 설정
+    - mysql 1개이며 각 API 서비스들이 접근하여 데이터 조회
+    - TB_PRODUCT 테이블에 상품들 데이터 저장
 
 ## 기술스택
 - docker-compose, docker
