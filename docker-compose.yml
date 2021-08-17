@@ -1,0 +1,60 @@
+version: '3'
+services:
+  proxy:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./proxy/nginx.conf:/etc/nginx/nginx.conf
+  api-fruit:
+    container_name: api-fruit
+    build:
+      context: ./api-fruit
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+      - proxy
+    volumes:
+      - ./api-fruit/src:/var/www/html/
+      - ./api-fruit/000-default.conf:/etc/apache2/sites-available/000-default.conf
+    ports:
+      - 8081:80
+  api-vegetable:
+    container_name: api-vegetable
+    build:
+      context: ./api-vegetable
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+      - proxy
+    volumes:
+      - ./api-vegetable/src:/var/www/html/
+      - ./api-vegetable/000-default.conf:/etc/apache2/sites-available/000-default.conf
+    ports:
+      - 8082:80
+  web-front:
+    container_name: web-front
+    build:
+      context: ./web-front
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+      - proxy
+    volumes:
+      - ./web-front/src:/var/www/html/
+      - ./web-front/000-default.conf:/etc/apache2/sites-available/000-default.conf
+    ports:
+      - 8083:80
+  db:
+      container_name: db
+      image: mysql:5.7.25
+      restart: always
+      environment:
+          MYSQL_ROOT_PASSWORD: root123
+          MYSQL_DATABASE: gomdb
+          MYSQL_USER: gom
+          MYSQL_PASSWORD: gom123
+      volumes:
+        - ./data:/var/lib/mysql
+      ports:
+          - "3306:3306"
